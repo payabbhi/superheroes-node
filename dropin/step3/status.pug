@@ -1,0 +1,51 @@
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  title Superheroes
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(href='/style.css' rel='stylesheet')
+.site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      .masthead.clearfix
+        .inner
+          h3.masthead-brand Superheroes
+          nav
+            ul.nav.masthead-nav
+              li
+                a(href='http://github.com/payabbhi/superheroes-node' style='font-size: xx-large;')
+                  i.fa.fa-github(aria-hidden='true')
+      if (error === null) && (payment.id !== '')
+        .inner.cover
+          h1.cover-heading
+            | You&apos;ve got&nbsp;
+            = hero.name
+          h3
+            | for ₹
+            = (payment.amount/100).toFixed(2)
+          p.lead
+            img(src= hero.image)
+          p.lead
+            | Order ID is &nbsp;
+            = merchantOrderId
+          p.lead
+            | Payment ID is &nbsp;
+            = payment.id
+          p.lead
+            a.btn.btn-lg.btn-default(href='/') Continue shopping
+      else
+        .inner.cover
+          h1.cover-heading Hard Luck !! Your attempt to buy a superhero was in vain
+          p.lead
+            | Oops!! Could not complete the order for Order ID
+            = merchantOrderId
+          p.lead
+            a.btn.btn-lg.btn-default(href='/') Try Again
+      .mastfoot
+        .inner
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')

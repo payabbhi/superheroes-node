@@ -1,0 +1,28 @@
+head
+  include includes/head.pug
+.site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      include includes/navbar.pug
+      if (error === null) && (payment.id !== '')
+        .inner.cover
+          h1.cover-heading
+            | You&apos;ve got&nbsp;
+            = hero.name
+          p.lead
+            img(src= hero.image)
+          p.lead
+            | Order ID is &nbsp;
+            = merchantOrderId
+          p.lead
+            | Payment ID is &nbsp;
+            = payment.id
+          p.lead
+            a.btn.btn-lg.btn-default(href='/') Continue shopping
+      else
+        .inner.cover
+          include includes/error.pug
+      .mastfoot
+        .inner
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')

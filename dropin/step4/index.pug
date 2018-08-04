@@ -1,0 +1,32 @@
+head
+  include includes/head.pug
+.site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      include includes/navbar.pug
+      if error === null
+        .inner.cover
+          h1.cover-heading Limited Offer Sale !!
+          p.lead Purchase a random superhero to run your errands. Try your luck.
+          form(action='/status' method='POST')
+            script(src='https://checkout.payabbhi.com/v1/checkout.js'
+                   data-access-id= accessId
+                   data-order-id= order.id
+                   data-amount= order.amount
+                   data-image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrqxgvtb3CZ9MJOKpXWxrScQEK4lwzbClXg_J7iayii4PTg-Y5'
+                   data-name='Superheroes Store'
+                   data-description='Order No ' + order.merchant_order_id
+                   data-prefill.name='Bruce Wayne'
+                   data-prefill.email='bruce@wayneinc.com'
+                   data-prefill.contact='9999999999'
+                   data-theme.color='#F6A821'
+                   data-notes.merchant_order_id= order.merchant_order_id
+                  )
+            input(type='hidden' name='merchant_order_id' value=order.merchant_order_id input='')      
+      else
+        .inner.cover
+          include includes/error.pug
+      .mastfoot
+        .inner
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')

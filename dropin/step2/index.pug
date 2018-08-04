@@ -1,0 +1,44 @@
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  title Superheroes
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' crossorigin='anonymous')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(href='/style.css' rel='stylesheet')
+.site-wrapper
+  .site-wrapper-inner
+    .cover-container
+      .masthead.clearfix
+        .inner
+          h3.masthead-brand Superheroes
+          nav
+            ul.nav.masthead-nav
+              li
+                a(href='http://github.com/payabbhi/superheroes' style='font-size: xx-large;')
+                  i.fa.fa-github(aria-hidden='true')
+      .inner.cover
+        h1.cover-heading Limited Offer Sale !!
+        p.lead Purchase a random superhero to run your errands. Try your luck.
+        form(action='/status' method='POST')
+          script(src='https://checkout.payabbhi.com/v1/checkout.js'
+                 data-access-id= accessId
+                 data-order-id= order.id
+                 data-amount= order.amount
+                 data-image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrqxgvtb3CZ9MJOKpXWxrScQEK4lwzbClXg_J7iayii4PTg-Y5'
+                 data-name='Superheroes Store'
+                 data-description='Order No ' + order.merchant_order_id
+                 data-prefill.name='Bruce Wayne'
+                 data-prefill.email='bruce@wayneinc.com'
+                 data-prefill.contact='9999999999'
+                 data-theme.color='#F6A821'
+                 data-notes.merchant_order_id= order.merchant_order_id
+                )
+          input(type='hidden' name='merchant_order_id' value=order.merchant_order_id input='')
+
+      .mastfoot
+        .inner
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')

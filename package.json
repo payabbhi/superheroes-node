@@ -1,0 +1,39 @@
+{
+  "name": "superheroes-node",
+  "version": "1.0.0",
+  "description": "A tutorial to enable Payments acceptance via Payabbhi Node Library",
+  "main": "index.js",
+  "scripts": {
+    "custom1": "node custom/step1.js",
+    "custom2": "node custom/step2.js",
+    "custom3": "node custom/step3.js",
+    "custom4": "node custom/step4.js",
+    "dropin1": "node dropin/step1.js",
+    "dropin2": "node dropin/step2.js",
+    "dropin3": "node dropin/step3.js",
+    "dropin4": "node dropin/step4.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/payabbhi/superheroes-node.git"
+  },
+  "keywords": [
+    "payabbhi",
+    "nodejs",
+    "payments",
+    "sample"
+  ],
+  "author": "Payabbhi <support@payabbhi.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/payabbhi/superheroes-node/issues"
+  },
+  "homepage": "https://github.com/payabbhi/superheroes-node#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chance": "^1.0.16",
+    "express": "^4.16.3",
+    "payabbhi": "^1.0.0",
+    "pug": "^2.0.3"
+  }
+}
