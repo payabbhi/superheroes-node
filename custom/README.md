@@ -7,7 +7,7 @@ Step 1 is the first level of our tutorial. We will be building a Superhero Store
 The `Payments Acceptance workflow` is implemented as described in the Payabbhi [Integration Guide](https://payabbhi.com/docs/integration).
 
 Before proceeding with this tutorial, make sure you have done the following:
-1. Installed [Node.js](https://nodejs.org/en/) v6.4.0 and later
+1. Installed [Node.js](https://nodejs.org/en/) v7.6.0 and later
 1. Cloned this repository on your computer and installed the dependancies
 ```shell
 $ git clone http://github.com/payabbhi/superheroes-node.git
