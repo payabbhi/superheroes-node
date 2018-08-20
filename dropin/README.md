@@ -8,14 +8,20 @@ The `Payments Acceptance workflow` is implemented as described in the Payabbhi [
 
 Before proceeding with this tutorial, make sure you have done the following:
 1. Installed [Node.js](https://nodejs.org/en/) v7.6.0 and later
-1. Cloned this repository on your computer and installed the dependancies
+2. Cloned this repository on your computer and installed the dependencies
 ```shell
 $ git clone http://github.com/payabbhi/superheroes-node.git
 $ cd superheroes-node
 $ npm install
 ```
-2. Signed up for your [Payabbhi Account](https://payabbhi.com/docs/account)
-3. Downloaded the [API keys](https://payabbhi.com/docs/account/#api-keys) from the [Portal](https://payabbhi.com/portal).
+Please ensure that you have added following *dependencies* to your *package.json.*
+```
+"dependencies": {
+    "payabbhi": "^1.0.0",
+  }
+```
+3. Signed up for your [Payabbhi Account](https://payabbhi.com/docs/account)
+4. Downloaded the [API keys](https://payabbhi.com/docs/account/#api-keys) from the [Portal](https://payabbhi.com/portal).
 
 Now, set the `PA_ACCESS_ID` and `PA_SECRET_KEY` environment variables with your id and key and execute the following command to start the superheroes app.
 
