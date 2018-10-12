@@ -1,29 +1,12 @@
 # Dropin Checkout Tutorial
 
-## Step 1: Getting Started
+This tutorial demonstrates integration with `Payabbhi Checkout` using  [dropin](https://payabbhi.com/docs/checkout/#drop-in-checkout) mode.
 
-Step 1 is the first level of our tutorial. We will be building a Superhero Store where a superhero can be purchased by paying a random amount between ₹1 to ₹5.
+## Step 1: Basic `Payments Acceptance`
 
-The `Payments Acceptance workflow` is implemented as described in the Payabbhi [Integration Guide](https://payabbhi.com/docs/integration).
+Step 1 is the first level of our tutorial.
 
-Before proceeding with this tutorial, make sure you have done the following:
-1. Installed [Node.js](https://nodejs.org/en/) v7.6.0 and later
-2. Cloned this repository on your computer and installed the dependencies
-```shell
-$ git clone http://github.com/payabbhi/superheroes-node.git
-$ cd superheroes-node
-$ npm install
-```
-Please ensure that you have added following *dependencies* to your *package.json.*
-```
-"dependencies": {
-    "payabbhi": "^1.0.0",
-  }
-```
-3. Signed up for your [Payabbhi Account](https://payabbhi.com/docs/account)
-4. Downloaded the [API keys](https://payabbhi.com/docs/account/#api-keys) from the [Portal](https://payabbhi.com/portal).
-
-Now, set the `PA_ACCESS_ID` and `PA_SECRET_KEY` environment variables with your id and key and execute the following command to start the superheroes app.
+Execute the following command to start the superheroes app.
 
 ```shell
 $ export PA_ACCESS_ID=<your-access-id>
@@ -38,19 +21,19 @@ Browse the code to check how the [Payments Acceptance workflow](https://payabbhi
 
 1. We first create a Payabbhi order by calling the `Create Order API`.
 2. Then we integrate with Payabbhi `Dropin Checkout` as per [Web Checkout](https://payabbhi.com/docs/checkout) Guide.
-3. For `Checkout flows` in test mode, we use [Test Cards](https://payabbhi.com/docs/account).
+3. For `Checkout flows` in test mode, we use [Test Cards](https://payabbhi.com/docs/sandbox).
 4. After successful payment, the JavaScript handler submits the `Payment response` to the `Status` page.
 5. Then we display the success message to the customer along with the orderID and paymentID.
 
 ----
 
-To verify your integration, you can call the [Payments API](https://payabbhi.com/docs/api/#payments) or you can check the list of payments in the [Payabbhi Portal](https://payabbhi.com/portal/payments).
+To verify your integration, you may call the [Payments API](https://payabbhi.com/docs/api/#payments) or check [Portal > Payments](https://payabbhi.com/portal/payments).
 
-## Step 2: Handling Payment Response
+## Step 2: Add `Payment Response Handling`
 
-In Step 2, we build upon the code in Step 1 by adding [Payment Response Handling](https://payabbhi.com/docs/integration/#payment-response-handling).
+In Step 2, we build upon the code in Step 1 by adding [Payment Response Handling](https://payabbhi.com/docs/integration/#verification-of-payment-response).
 
-After successful payment, the JavaScript handler submits the `Payment response` to the `Status` page.
+After successful payment, `Payabbhi Checkout` submits the `Payment response` to the `Status` page.
 
 In status function, we verify the `Payment response` via the utility function in the client library.
 
@@ -60,9 +43,9 @@ $ npm run dropin2
 ```
 
 
-# Step 3: Error Handling
+# Step 3: Add `Exception Handling`
 
-In Step 3, we further enhance the code by adding basic `error handling` and also show you how to debug any possible errors in your code.
+In Step 3, we further enhance the code by adding basic `Exception Handling` and also show you how to debug any possible errors in your code.
 
 Refer to [Exception Handling](https://payabbhi.com/docs/api/?node#errors) for documentation of exception classes.
 
@@ -82,14 +65,14 @@ Check the code to see how the `Library Exceptions`, which typically wrap the [AP
 
 -----
 
-For `Checkout flows` in test mode, you may deliberately not use the [Test Cards](https://payabbhi.com/docs/account) to try out the validations.
+For `Checkout flows` in test mode, you may deliberately not use the [Test Cards](https://payabbhi.com/docs/sandbox) to try out the validations.
 
 You may also choose to click on the `Declined` button in `test mode` to see the alternative flow.
 
-For failed payments, you may check the `error_code` and `error_description` attributes via [Payments API](https://payabbhi.com/docs/api/#payments) or check the payments list in [Portal](https://payabbhi.com/portal/payments).
+For failed payments, you may check the `error_code` and `error_description` attributes via [Payments API](https://payabbhi.com/docs/api/#payments) or check [Portal > Payments](https://payabbhi.com/portal/payments).
 
 
-## Step 4: Refactoring
+## Step 4: Refactoring to bring everything together
 
 In Step 4, we bring all the pieces from preceding steps together. The code is reorganized and refactored to give a working sample app based on this `Client Library`.
 
